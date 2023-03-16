@@ -28,13 +28,16 @@ export default function App() {
 
         <CalciteShellPanel
           id="primary-panel"
-          slot="primary-panel"
+          slot="panel-start"
           data-action-id="primary-panel"
           detached={false}
           widthScale="m"
           collapsed={isPanelOpen ? undefined : true}
         >
-          <CalciteActionBar slot="action-bar">
+          <CalciteActionBar
+            slot="action-bar"
+            messageOverrides={{ expand: "Open", collapse: "Close" }}
+          >
             <CalciteAction
               key={0}
               id={"home"}
@@ -52,7 +55,7 @@ export default function App() {
               width-scale="m"
               data-panel-id="parent-panel"
               description="Some summary text"
-              widthScale="m"
+              // /widthScale="m"
               closed={isPanelOpen ? undefined : true} // set in prod to true
             >
               <CalciteAction
@@ -84,7 +87,7 @@ export default function App() {
                 <span>This is a tooltip</span>
               </CalciteTooltip>
               <CalciteNotice
-                active={true}
+                open={true}
                 icon={"information"}
                 scale="s"
                 style={{ marginTop: "5px" }}
