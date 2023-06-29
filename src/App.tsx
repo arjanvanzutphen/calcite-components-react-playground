@@ -7,6 +7,8 @@ import {
   CalciteButton,
   CalciteFlow,
   CalciteFlowItem,
+  CalciteNavigation,
+  CalciteNavigationLogo,
   CalciteNotice,
   CalciteShell,
   CalciteShellPanel,
@@ -20,17 +22,19 @@ export default function App() {
   return (
     <div className="App">
       <CalciteShell content-behind={true}>
-        <div slot="header" style={{ display: "flex", flexDirection: "row" }}>
-          <h2 id="header-title" style={{ paddingLeft: "10px", flexGrow: 1 }}>
-            Header app
-          </h2>
-        </div>
+        <CalciteNavigation slot="header" label="">
+          <CalciteNavigationLogo
+            slot="logo"
+            heading="Header app"
+            description="Description"
+          ></CalciteNavigationLogo>
+        </CalciteNavigation>
 
         <CalciteShellPanel
           id="primary-panel"
           slot="panel-start"
           data-action-id="primary-panel"
-          detached={false}
+          displayMode="dock"
           widthScale="m"
           collapsed={isPanelOpen ? undefined : true}
         >
