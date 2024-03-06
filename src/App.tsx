@@ -1,21 +1,22 @@
 import { useState } from "react";
 
 import {
-  CalciteAction,
-  CalciteActionBar,
-  CalciteAlert,
-  CalciteButton,
-  CalciteFlow,
-  CalciteFlowItem,
+  CalciteShell,
   CalciteNavigation,
   CalciteNavigationLogo,
-  CalciteNotice,
-  CalciteShell,
   CalciteShellPanel,
-  CalciteTooltip
+  CalciteActionBar,
+  CalciteAction,
+  CalciteFlow,
+  CalciteFlowItem,
+  CalciteButton,
+  CalciteTooltip,
+  CalciteNotice,
+  CalciteAlert,
 } from "@esri/calcite-components-react";
+import "./App.css";
 
-export default function App() {
+function App() {
   const [isPanelOpen, setIsPanelOpen] = useState(true);
   const [isAlertOpen, setIsAlertOpen] = useState(true);
 
@@ -119,3 +120,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
